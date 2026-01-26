@@ -18,7 +18,7 @@ import {
 import { Button } from "./ui/button";
 import { Trash2 } from "lucide-react";
 
-export default function DeleteInvoiceDialog({ invoiceId, trigger }) {
+export default function DeleteInvoiceDialog({ invoiceId, onDeleted, trigger }) {
   const [isDeleting, setIsDeleting] = useState(false);
   const deleteInvoice = useMutation(api.invoices.deleteInvoice);
 
@@ -27,6 +27,9 @@ export default function DeleteInvoiceDialog({ invoiceId, trigger }) {
     try {
       await deleteInvoice({ id: invoiceId });
       toast.success("Invoice deleted successfully");
+      if (onDeleted) {
+        onDeleted();
+      }
     } catch (error) {
       console.error(error);
       toast.error("Failed to delete invoice");
