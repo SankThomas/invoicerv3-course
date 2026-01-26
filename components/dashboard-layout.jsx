@@ -1,12 +1,22 @@
 "use client";
 
-import { FileText } from "lucide-react";
-import { LayoutDashboard, Plus, Settings } from "lucide-react";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
+import {
+  FileText,
+  LayoutDashboard,
+  LogOut,
+  Menu,
+  Moon,
+  Plus,
+  Settings,
+  Sun,
+  X,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
-import { X } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,12 +25,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Sun } from "lucide-react";
-import { Moon } from "lucide-react";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
-import { LogOut } from "lucide-react";
-import { Menu } from "lucide-react";
 
 export default function DashboardLayout({ children, user }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);

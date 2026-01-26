@@ -1,11 +1,11 @@
 "use client";
 
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import DashboardLayout from "@/components/dashboard-layout";
 import InvoiceForm from "@/components/invoice-form";
 import LoadingSpinner from "@/components/loading-spinner";
-import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import { useQuery } from "convex/react";
 
 export default function NewInvoice() {
   const { user, isAuthenticated, isLoading } = useKindeBrowserClient();

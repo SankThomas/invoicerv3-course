@@ -1,10 +1,9 @@
 "use client";
 
-import { LoginLink } from "@kinde-oss/kinde-auth-nextjs";
 import { Button } from "@/components/ui/button";
-import { FileText } from "lucide-react";
+import { LoginLink } from "@kinde-oss/kinde-auth-nextjs";
+import { ChevronRight, FileText } from "lucide-react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 
 export default function LandingPage() {
   return (

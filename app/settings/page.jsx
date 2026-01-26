@@ -32,15 +32,17 @@ import {
   useKindeBrowserClient,
 } from "@kinde-oss/kinde-auth-nextjs";
 import { useMutation, useQuery } from "convex/react";
-import { User } from "lucide-react";
-import { Monitor } from "lucide-react";
-import { Moon } from "lucide-react";
-import { Building } from "lucide-react";
-import { Save } from "lucide-react";
-import { Trash2 } from "lucide-react";
-import { LogOut } from "lucide-react";
-import { Palette } from "lucide-react";
-import { Sun } from "lucide-react";
+import {
+  Building,
+  LogOut,
+  Monitor,
+  Moon,
+  Palette,
+  Save,
+  Sun,
+  Trash2,
+  User,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";

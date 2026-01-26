@@ -2,6 +2,7 @@
 
 import { api } from "@/convex/_generated/api";
 import { useMutation } from "convex/react";
+import { Trash2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import {
@@ -16,7 +17,6 @@ import {
   AlertDialogTrigger,
 } from "./ui/alert-dialog";
 import { Button } from "./ui/button";
-import { Trash2 } from "lucide-react";
 
 export default function DeleteInvoiceDialog({ invoiceId, onDeleted, trigger }) {
   const [isDeleting, setIsDeleting] = useState(false);

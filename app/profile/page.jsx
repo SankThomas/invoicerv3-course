@@ -8,13 +8,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { api } from "@/convex/_generated/api";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { useQuery } from "convex/react";
-import { DollarSign } from "lucide-react";
-import { Palette } from "lucide-react";
-import { Mail } from "lucide-react";
-import { Building } from "lucide-react";
-import { Phone } from "lucide-react";
-import { MapPin } from "lucide-react";
-import { User } from "lucide-react";
+import {
+  Building,
+  DollarSign,
+  Mail,
+  MapPin,
+  Palette,
+  Phone,
+  User,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
