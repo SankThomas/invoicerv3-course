@@ -99,7 +99,7 @@ ${userQuery?.businessName || "Invoicer"}`,
 
   if (!invoice) {
     return (
-      <DashboardLayout user={user}>
+      <DashboardLayout user={userQuery}>
         <div className="py-12 text-center">
           <h2 className="mb-2 text-2xl font-semibold">Invoice not found</h2>
           <p className="text-muted-foreground">
@@ -111,7 +111,7 @@ ${userQuery?.businessName || "Invoicer"}`,
   }
 
   return (
-    <DashboardLayout user={user}>
+    <DashboardLayout user={userQuery}>
       <div className="space-y-6">
         <div className="items-cener flex gap-4">
           <Link href={`/invoice/${invoice._id}`}>

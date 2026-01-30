@@ -12,6 +12,10 @@ export default function InvoiceDetails() {
   const { id } = useParams();
   const { user, isAuthenticated, isLoading } = useKindeBrowserClient();
 
+  const userQuery = useQuery(
+    api.users.getUserByKindeId,
+    user?.id ? { kindeId: user.id } : "skip",
+  );
   const invoice = useQuery(api.invoices.getInvoice, { id: id });
 
   if (isLoading || !isAuthenticated) {
@@ -20,7 +24,7 @@ export default function InvoiceDetails() {
 
   if (!invoice) {
     return (
-      <DashboardLayout user={user}>
+      <DashboardLayout user={userQuery}>
         <div className="py-12 text-center">
           <h2 className="mb-2 text-2xl font-semibold">Invoice not found</h2>
           <p className="text-muted-foreground">
@@ -32,7 +36,7 @@ export default function InvoiceDetails() {
   }
 
   return (
-    <DashboardLayout user={user}>
+    <DashboardLayout user={userQuery}>
       <InvoiceView invoice={invoice} />
     </DashboardLayout>
   );
