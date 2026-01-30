@@ -3,6 +3,7 @@ import "./globals.css";
 import { ConvexClientProvider } from "./convexclientprovider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { AuthProvider } from "./auth-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,20 +17,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
-        <ConvexClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster richColors />
-          </ThemeProvider>
-        </ConvexClientProvider>
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${geistSans.className} antialiased`}>
+          <ConvexClientProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+              <Toaster richColors />
+            </ThemeProvider>
+          </ConvexClientProvider>
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
