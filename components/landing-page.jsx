@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { LoginLink } from "@kinde-oss/kinde-auth-nextjs";
 import { ChevronRight, FileText } from "lucide-react";
 import Link from "next/link";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
 export default function LandingPage() {
+  const { user, isAuthenticated } = useKindeBrowserClient();
+
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <header className="container mx-auto px-6 py-8">
@@ -22,9 +25,15 @@ export default function LandingPage() {
             <Button asChild variant="ghost" className="hidden lg:block">
               <Link href="/privacy">Privacy policy</Link>
             </Button>
-            <LoginLink>
-              <Button variant="default">Sign In</Button>
-            </LoginLink>
+            {user && isAuthenticated ? (
+              <Button variant="default">
+                <Link href="/dashboard">Dashboard</Link>
+              </Button>
+            ) : (
+              <LoginLink>
+                <Button variant="default">Sign In</Button>
+              </LoginLink>
+            )}
           </div>
         </nav>
       </header>
@@ -40,11 +49,17 @@ export default function LandingPage() {
           </p>
 
           <div className="flex items-center justify-center gap-4">
-            <LoginLink>
-              <Button size="lg" className="gap-2">
-                Get started for free <ChevronRight className="size-5" />
+            {user && isAuthenticated ? (
+              <Button variant="default">
+                <Link href="/dashboard">View Your Dashboard</Link>
               </Button>
-            </LoginLink>
+            ) : (
+              <LoginLink>
+                <Button size="lg" className="gap-2">
+                  Get started for free <ChevronRight className="size-5" />
+                </Button>
+              </LoginLink>
+            )}
 
             <Button asChild variant="outline" size="lg">
               <Link href="/terms">Learn more</Link>
