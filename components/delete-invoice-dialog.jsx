@@ -47,7 +47,7 @@ export default function DeleteInvoiceDialog({ invoiceId, onDeleted, trigger }) {
             size="sm"
             className="text-red-600 hover:text-red-700"
           >
-            <Trash2 className="mr-2 size-4" />
+            <Trash2 className="size-4" />
             Delete
           </Button>
         )}

@@ -90,20 +90,20 @@ export default function InvoiceView({ invoice }) {
             variant="outline"
             disabled={isExporting}
           >
-            <Download className="mr-2 size-4" />
+            <Download className="size-4" />
             {isExporting ? "Exporting..." : "Export PDF"}
           </Button>
 
           <Link href={`/invoice/${invoice._id}/send`}>
             <Button variant="outline">
-              <Mail className="mr-2 size-4" />
+              <Mail className="size-4" />
               Send to Client
             </Button>
           </Link>
 
           <Link href={`/invoice/${invoice._id}/edit`}>
             <Button variant="outline">
-              <Edit className="mr-2 size-4" />
+              <Edit className="size-4" />
               Edit
             </Button>
           </Link>
@@ -118,14 +118,14 @@ export default function InvoiceView({ invoice }) {
             <DropdownMenuContent>
               {invoice.status !== "paid" && (
                 <DropdownMenuItem onClick={() => handleStatusChange("paid")}>
-                  <CheckCircle className="mr-2 size-4" />
+                  <CheckCircle className="size-4" />
                   Mark as Paid
                 </DropdownMenuItem>
               )}
 
               {invoice.status !== "send" && invoice.status !== "paid" && (
                 <DropdownMenuItem onClick={() => handleStatusChange("sent")}>
-                  <Send className="mr-2 size-4" />
+                  <Send className="size-4" />
                   Mark as Sent
                 </DropdownMenuItem>
               )}
@@ -145,7 +145,7 @@ export default function InvoiceView({ invoice }) {
                 trigger={
                   <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                     <span className="flex w-full items-center text-red-600">
-                      <Trash2 className="mr-2 size-4 text-red-600" /> Delete Invoice
+                      <Trash2 className="size-4 text-red-600" /> Delete Invoice
                     </span>
                   </DropdownMenuItem>
                 }

@@ -144,12 +144,12 @@ export default function DashboardLayout({ children, user }) {
                 >
                   {theme === "dark" ? (
                     <>
-                      <Sun className="mr-2 size-4" />
+                      <Sun className="size-4" />
                       Light mode
                     </>
                   ) : (
                     <>
-                      <Moon className="mr-2 size-4" />
+                      <Moon className="size-4" />
                       Dark mode
                     </>
                   )}
@@ -159,7 +159,7 @@ export default function DashboardLayout({ children, user }) {
 
                 <LogoutLink>
                   <DropdownMenuItem>
-                    <LogOut className="mr-2 size-4" />
+                    <LogOut className="size-4" />
                     Sign out
                   </DropdownMenuItem>
                 </LogoutLink>
