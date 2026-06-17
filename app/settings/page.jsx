@@ -34,11 +34,11 @@ import {
 import { useMutation, useQuery } from "convex/react";
 import {
   Building,
+  CheckCheck,
   LogOut,
   Monitor,
   Moon,
   Palette,
-  Save,
   Sun,
   Trash2,
   User,
@@ -319,7 +319,7 @@ export default function Settings() {
 
           <div className="flex justify-between">
             <Button type="submit" disabled={isUpdating}>
-              <Save className="mr-2 size-4" />
+              <CheckCheck className="size-4" />
               {isUpdating ? "Saving..." : "Save Changes"}
             </Button>
           </div>
@@ -343,7 +343,7 @@ export default function Settings() {
 
               <LogoutLink>
                 <Button variant="outline">
-                  <LogOut className="mr-2 size-4" />
+                  <LogOut className="size-4" />
                   Sign Out
                 </Button>
               </LogoutLink>
@@ -362,7 +362,7 @@ export default function Settings() {
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button variant="destructive">
-                    <Trash2 className="mr-2 size-4" />
+                    <Trash2 className="size-4" />
                     Delete Account
                   </Button>
                 </AlertDialogTrigger>
