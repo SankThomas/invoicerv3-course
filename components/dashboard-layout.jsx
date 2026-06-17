@@ -10,6 +10,7 @@ import {
   Plus,
   Settings,
   Sun,
+  User,
   X,
 } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -130,10 +131,10 @@ export default function DashboardLayout({ children, user }) {
                 <DropdownMenuSeparator />
 
                 <DropdownMenuItem onClick={() => router.push("/profile")}>
-                  Profile
+                  <User className="size-4" /> Profile
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => router.push("/settings")}>
-                  Settings
+                  <Settings className="size-4" /> Settings
                 </DropdownMenuItem>
 
                 <DropdownMenuSeparator />
