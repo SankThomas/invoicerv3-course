@@ -12,6 +12,7 @@ import {
   MoreHorizontal,
   Send,
   Trash2,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -133,7 +134,7 @@ export default function InvoiceView({ invoice }) {
                 <DropdownMenuItem
                   onClick={() => handleStatusChange("cancelled")}
                 >
-                  <Trash2 className="mr-2 size-4" />
+                  <X className="size-4" />
                   Cancel Invoice
                 </DropdownMenuItem>
               )}
@@ -144,7 +145,7 @@ export default function InvoiceView({ invoice }) {
                 trigger={
                   <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                     <span className="flex w-full items-center text-red-600">
-                      Delete Invoice
+                      <Trash2 className="mr-2 size-4 text-red-600" /> Delete Invoice
                     </span>
                   </DropdownMenuItem>
                 }
