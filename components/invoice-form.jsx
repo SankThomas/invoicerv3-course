@@ -157,6 +157,7 @@ export default function InvoiceForm({ invoice = null }) {
                   setFormData({ ...formData, invoiceNumber: e.target.value })
                 }
                 required
+                maxLength={32}
               />
             </div>
 
@@ -184,6 +185,7 @@ export default function InvoiceForm({ invoice = null }) {
                   setFormData({ ...formData, clientName: e.target.value })
                 }
                 required
+                maxLength={42}
               />
             </div>
 
@@ -197,6 +199,7 @@ export default function InvoiceForm({ invoice = null }) {
                   setFormData({ ...formData, clientEmail: e.target.value })
                 }
                 required
+                maxLength={42}
               />
             </div>
           </div>
@@ -210,7 +213,11 @@ export default function InvoiceForm({ invoice = null }) {
                 setFormData({ ...formData, clientAddress: e.target.value })
               }
               rows={3}
+              maxLength={140}
             />
+            <small className="text-muted-foreground">
+              Limited to 140 characters
+            </small>
           </div>
         </CardContent>
       </Card>
@@ -220,7 +227,7 @@ export default function InvoiceForm({ invoice = null }) {
           <div className="flex items-center justify-between">
             <CardTitle>Invoice Items</CardTitle>
             <Button type="button" onClick={addItem} variant="outline" size="sm">
-              <Plus className="mr-2 size-4" />
+              <Plus className="size-4" />
               Add Item
             </Button>
           </div>
@@ -239,6 +246,7 @@ export default function InvoiceForm({ invoice = null }) {
                     }
                     placeholder="Item description"
                     required
+                    maxLength={140}
                   />
                 </div>
 
@@ -247,6 +255,7 @@ export default function InvoiceForm({ invoice = null }) {
                   <Input
                     type="number"
                     min="1"
+                    max="999999999999"
                     value={item.quantity}
                     onChange={(e) =>
                       handleItemChange(
@@ -265,6 +274,7 @@ export default function InvoiceForm({ invoice = null }) {
                     type="number"
                     min="0"
                     step="0.01"
+                    max="999999999999"
                     value={item.rate}
                     onChange={(e) =>
                       handleItemChange(
@@ -397,7 +407,11 @@ export default function InvoiceForm({ invoice = null }) {
               }
               placeholder="Additional notes or payment terms"
               rows={3}
+              maxLength={500}
             />
+            <small className="text-muted-foreground">
+              Limited to 500 characters
+            </small>
           </div>
         </CardContent>
       </Card>
