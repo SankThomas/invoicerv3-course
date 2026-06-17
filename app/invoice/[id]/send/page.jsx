@@ -116,7 +116,7 @@ ${userQuery?.businessName || "Invoicer"}`,
         <div className="items-cener flex gap-4">
           <Link href={`/invoice/${invoice._id}`}>
             <Button variant="ghost" size="sm">
-              <ArrowLeft className="mr-2 size-4" />
+              <ArrowLeft className="size-4" />
             </Button>
           </Link>
 
@@ -180,7 +180,7 @@ ${userQuery?.businessName || "Invoicer"}`,
                 </div>
 
                 <Button type="submit" disabled={isSending} className="w-full">
-                  <Send className="mr-2 size-4" />
+                  <Send className="size-4" />
                   {isSending ? "Sending..." : "Send Invoice"}
                 </Button>
               </form>
