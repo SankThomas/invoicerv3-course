@@ -4,7 +4,7 @@ import { api } from "@/convex/_generated/api";
 import { formatCurrency, getStatusColor } from "@/lib/utils";
 import { useMutation } from "convex/react";
 import { format } from "date-fns";
-import { Eye, MoreHorizontal, Send } from "lucide-react";
+import { Eye, MoreHorizontal, Send, Trash2, X } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
 import DeleteInvoiceDialog from "./delete-invoice-dialog";
@@ -150,7 +150,7 @@ export default function InvoiceList({ invoices }) {
                           handleStatusChange(invoice._id, "cancelled")
                         }
                       >
-                        Cancel Invoice
+                        <X className="size-4" /> Cancel Invoice
                       </DropdownMenuItem>
                     )}
 
@@ -159,7 +159,7 @@ export default function InvoiceList({ invoices }) {
                       trigger={
                         <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                           <span className="flex w-full items-center text-red-600">
-                            Delete
+                            <Trash2 className="mr-2 size-4 text-red-600" /> Delete
                           </span>
                         </DropdownMenuItem>
                       }
