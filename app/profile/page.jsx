@@ -104,7 +104,7 @@ export default function ProfilePage() {
             />
             <InfoRow
               icon={Phone}
-              label="Business PHone"
+              label="Business Phone"
               value={userQuery?.businessPhone}
             />
             <InfoRow

@@ -85,7 +85,7 @@ ${userQuery?.businessName || "Invoicer"}`,
 
       await updateInvoiceStatus({ id: invoice._id, status: "sent" });
 
-      toast.success("INvoice sent successfully");
+      toast.success("Invoice sent successfully");
       router.push(`/invoice/${invoice._id}`);
     } catch (error) {
       toast.error("Failed to send invoice");
