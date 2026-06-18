@@ -145,7 +145,7 @@ export default function InvoiceView({ invoice }) {
                 trigger={
                   <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                     <span className="flex w-full items-center text-red-600">
-                      <Trash2 className="size-4 text-red-600" /> Delete Invoice
+                      <Trash2 className="mr-2 size-4 text-red-600" /> Delete Invoice
                     </span>
                   </DropdownMenuItem>
                 }
