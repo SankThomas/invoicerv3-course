@@ -222,11 +222,11 @@ export default function InvoiceForm({ invoice = null }) {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="relative pb-20">
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle>Invoice Items</CardTitle>
-            <Button type="button" onClick={addItem} variant="outline" size="sm">
+            <Button type="button" onClick={addItem} variant="outline" size="sm" className="absolute right-8 bottom-4">
               <Plus className="size-4" />
               Add Item
             </Button>
