@@ -84,7 +84,8 @@ export default function InvoiceList({ invoices }) {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="rounded-tl-lg">Invoice #</TableHead>
+              <TableHead className="rounded-tl-lg"></TableHead>
+              <TableHead>Invoice #</TableHead>
               <TableHead>Client</TableHead>
               <TableHead>Amount</TableHead>
               <TableHead>Status</TableHead>
@@ -98,6 +99,16 @@ export default function InvoiceList({ invoices }) {
             {filteredInvoices.length > 0 ? (
               filteredInvoices.map((invoice) => (
                 <TableRow key={invoice._id}>
+                  <TableCell>
+                    <Button variant="ghost" size="sm">
+                      <Link
+                        href={`/invoice/${invoice._id}`}
+                        className="flex items-center gap-1"
+                      >
+                        <Eye className="size-4" />
+                      </Link>
+                    </Button>
+                  </TableCell>
                   <TableCell className="font-medium">
                     {invoice.invoiceNumber}
                   </TableCell>
@@ -209,7 +220,8 @@ export default function InvoiceList({ invoices }) {
                   colSpan={7}
                   className="text-muted-foreground py-8 text-center"
                 >
-                  No invoices found for "{searchTerm}". Try a different search term.
+                  No invoices found for "{searchTerm}". Try a different search
+                  term.
                 </TableCell>
               </TableRow>
             )}
