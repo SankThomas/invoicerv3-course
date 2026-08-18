@@ -1,5 +1,10 @@
 "use client";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { api } from "@/convex/_generated/api";
 import { formatCurrency, getStatusColor } from "@/lib/utils";
 import { useMutation } from "convex/react";
@@ -84,13 +89,14 @@ export default function InvoiceList({ invoices }) {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="rounded-tl-lg">Invoice #</TableHead>
+              <TableHead className="rounded-tl-lg"></TableHead>
+              <TableHead>Invoice #</TableHead>
               <TableHead>Client</TableHead>
               <TableHead>Amount</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Created</TableHead>
               <TableHead>Due Date</TableHead>
-              <TableHead className="rounded-tr-lg">Actions</TableHead>
+              <TableHead className="rounded-tr-lg">More Actions</TableHead>
             </TableRow>
           </TableHeader>
 
@@ -98,6 +104,18 @@ export default function InvoiceList({ invoices }) {
             {filteredInvoices.length > 0 ? (
               filteredInvoices.map((invoice) => (
                 <TableRow key={invoice._id}>
+                  <TableCell className="space-x-2">
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Button variant="ghost" asChild>
+                          <Link href={`/invoice/${invoice._id}`}>
+                            <Eye className="size-4" />
+                          </Link>
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>View Invoice</TooltipContent>
+                    </Tooltip>
+                  </TableCell>
                   <TableCell className="font-medium">
                     {invoice.invoiceNumber}
                   </TableCell>
@@ -209,7 +227,8 @@ export default function InvoiceList({ invoices }) {
                   colSpan={7}
                   className="text-muted-foreground py-8 text-center"
                 >
-                  No invoices found for "{searchTerm}". Try a different search term.
+                  No invoices found for "{searchTerm}". Try a different search
+                  term.
                 </TableCell>
               </TableRow>
             )}
